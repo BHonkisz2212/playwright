@@ -38,11 +38,37 @@ Zlokalizuj etap który chcesz zobaczyć (może to być sekcja lub lekcja)
   - uruchom testy `npx playwright test`
 5. Zacznij kodzić🧑‍💻
 
-## Visula Studio Code
+## Visual Studio Code
 - Preview: for README.md
 - Autodsve: in File-> Auto Save
 - Timelie: file context menu
 
-##Commands
+## Commands
 - record tests for given site
 'npx playwright codegen https://demo-bank.vercel.app/'
+
+## Prettier
+
+install Prettier
+npm install --save-dev --save-exact prettier
+
+configure Prettier
+
+exlude files in .prettierignore
+
+package-lock.json
+playwright-report
+test-results
+
+set rules in .prettierrc.json
+
+{
+    "singleQuote": true,
+    "endOfLine": "auto"
+}
+run Prettier
+npx prettier --write .
+
+additionaly you can install VSC extension: Prettier
+
+and set default VSC formatter as Prettier (right mouse button and Format document with ...)
