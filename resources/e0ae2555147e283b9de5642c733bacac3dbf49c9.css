@@ -1,0 +1,209 @@
+.nav-tabs ul li a.transfer {
+  padding: 0px 17px;
+}
+.history-account-timeline-head {
+  display: none;
+  margin-left: 200px;
+  padding-right: 20px;
+}
+.widget-table table.table-transfers td:first-child {
+  width: 7%;
+}
+.widget-table table.table-transfers td:first-child + td {
+  width: 22px;
+}
+.widget-table table.table-transfers td:first-child + td + td {
+  width: 60%;
+}
+.widget-table table.table-transfers td:first-child + td + td + td {
+  width: 30%;
+}
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+  .nav-tabs ul li a.transfer {
+    padding: 0px 10px;
+  }
+  .history-item-details .btn.gray, .history-item-details .btn.green {
+	min-height: 39px;
+  }
+  .history-account-timeline-head {
+    margin-left: 150px;
+  padding-right: 10px;
+  }
+  .widget-table table.table-transfers td:first-child {
+      width: 7%;
+      display: table-cell;
+      padding-left: 10px;
+  }
+  .widget-table table.table-transfers td:first-child + td {
+	width: 22px;
+  }
+  .widget-table table.table-transfers td:first-child + td + td {
+    width: 50%;
+  }
+  .widget-table table.table-transfers td:first-child + td + td .fancy-amount {
+    height: 26px;
+  }
+  .widget-table table.table-transfers td:first-child + td + td + td {
+    width: 40%;
+    display: table-cell;
+  }
+  .account-info .user-name {
+  	line-height: 1.3em;
+  }
+}
+@media only screen and (max-width: 767px) {
+	.history-account-timeline-head {
+	    margin-left: 0px;
+	    padding-right: 10px;
+	}
+	.history-item-details .btn.gray, .history-item-details .btn.green {
+		min-height: 39px;
+		width: 100%;
+  	}
+	.ms-btn-medium {
+		padding: 10px 5px;
+	}
+	.ms-inline {
+		display: inline;
+	}
+	.history-timeline-month-date .history-timeline-date-label-ms {
+		padding-top: 2px;
+	}
+}
+.shadowbox-layer .shadowbox-content.dashboard-manager-infobox .available-widget {
+  cursor: pointer;
+  line-height: 200px;
+  text-align: center;
+  background-color: #999;
+  font-weight: bold;
+  color: white;
+}
+.shadowbox-layer .shadowbox-content.dashboard-manager-infobox .available-widget {
+   border: 2px solid white;
+}
+.shadowbox-layer .shadowbox-content.dashboard-manager-infobox .available-widget:hover {
+   border-color: #da0027;
+}
+
+.shadowbox-layer .shadowbox-content.dashboard-manager-infobox .available-widget.active {
+      border-color: #da0027;
+}
+
+.grid-48 input[name="login"], .grid-ms-48 input[name="login"]  {
+	max-width: none;
+}
+.history-timeline-box {
+  margin-left: 0px;
+}
+.history-timeline-container {
+  margin-left: 0px;
+}
+.transactions-summary-label {
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+.form-header-search input[type="submitFake"] {
+  width: 34px;
+  height: 33px;
+  float: left;
+  border: none;
+  border-left: 1px solid white;
+  background: none;
+  background-position: -232px -13px;
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+  text-indent: -999px;
+  overflow: hidden;
+  padding: 0px;
+  cursor: default;
+}
+.form-header-search input[type="submitFake"]:hover {
+  cursor: default;
+  background: white;
+  background-position: -232px -53px;
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+}
+
+.history-notification-list-item-date {
+  font-size: 0.85714em;
+}
+
+
+.i-columns {
+  width: 40px;
+  height: 25px;
+  top: 8px;
+  vertical-align: baseline;
+}
+
+.i-pie {
+  width: 40px;
+  height: 25px;
+  top: 8px;
+  vertical-align: baseline;
+}
+
+.bg-image-blank {
+  background: url("../images/bg-image-blank.jpg") no-repeat top center;
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+.ie8 .bg-image-blank {
+  display: none;
+}
+.login-help {
+  margin-top: 50px;
+  padding-top: 30px;
+}
+
+.table-grid-wrapped {
+	word-break: break-all;
+}
+.search-result-padding {
+	padding-left:10px;
+}
+.no-left-margin {
+  margin-left: 0px;
+}
+
+.phonebook-settings-header {
+  border-bottom: 1px solid #88a903;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  min-height: 40px;
+}
+
+.phonebook-settings-header h1.wborder {
+    float: left;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.phonebook-settings {
+  float: right;
+  position: relative;
+  top: -5px;
+}
+
+@media only screen and (max-width: 767px) {
+	.smallMaxWid440 {
+		max-width: 420px;
+	}
+
+    .history-detail .btn {
+      height: 39px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+  .history-detail .btn {
+    height: 39px;
+  }
+}

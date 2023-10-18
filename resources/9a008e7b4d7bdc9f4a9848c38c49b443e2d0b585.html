@@ -1,0 +1,57 @@
+<div class="grid-wrapper" >
+	<h1>
+		<a href="pulpit.html" class="logo">Demobank w sam raz do testów</a>
+	</h1>
+<!--	<div class="header-search-container" id="search_form">-->
+<!--		<form class="form-header-search" id="header_search">-->
+<!--			<input type="search" name="phrase" placeholder="co chcesz zrobić?" />-->
+<!--			<input type="submit" class="form-header-search-button" value="Szukaj"/>-->
+<!--		</form>-->
+<!--	</div>-->
+	<a href="index.html" class="btn logout show-page-loader" id="log_out" data-testid="logout-button" onclick="clearCookies()">Wyloguj</a>
+	<a href="#" class="nav-mobile-trigger ms-show" id="nav_mobile_trigger"/>
+	<nav class="nav-mobile ms-show" id="nav_mobile">
+		<ul>
+			<li class="category">
+				<a href="pulpit.html" class="show-page-loader">
+					<i class="i-nav-dashboard"/>
+					mój pulpit
+				</a>
+			</li>
+			<li class="category">
+				<a href="konta.html" class="show-page-loader">
+					<i class="i-nav-accounts"/>
+					konta osobiste
+				</a>
+			</li>
+			<li class="category">
+				<a href="quick_payment.html" class="show-page-loader">
+					<i class="i-nav-payments"/>
+					płatności
+				</a>
+			</li>
+		</ul>
+	</nav>
+    <script>
+    	$(document).ready(function () {
+            validateLoginCookie()
+        });
+
+		function clearCookies() {
+            document.cookie = "isLogged=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        function getCookie(name) {
+            var match = document.cookie.match(RegExp('(?:^|;\\s*)' + name + '=([^;]*)'));
+            return match ? match[1] : null;
+        }
+
+        function validateLoginCookie() {
+            const value =  getCookie('isLogged')
+            if (value === null) {
+                console.log('Not logged')
+                window.location.replace("index.html");
+            }
+        }
+    </script>
+</div>

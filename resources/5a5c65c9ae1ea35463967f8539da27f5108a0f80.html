@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Demobank - Bankowość Internetowa - Pulpit
+    </title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    </meta>
+
+    <meta charset="utf-8">
+    </meta>
+    <script src="js/vendor/heads.js"></script>
+
+    <link rel="shortcut icon" href="images\logo-fav.png" type="image/vnd.microsoft.icon">
+    </link>
+
+    <link rel="stylesheet" href="css/style.css">
+    </link>
+
+    <link rel="stylesheet" href="css/style-custom.css">
+    </link>
+
+    <meta name="keywords" content="">
+    </meta>
+
+    <meta name="description" content="">
+    </meta>
+
+    <meta name="Robots" content="index,follow">
+    </meta>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    </meta>
+
+<body onload="getUrlData()">
+    <header class="header" id="header_placeholder"></header>
+
+    <div class="bg-image"></div>
+
+    <section class="container">
+        <div class="grid-wrapper">
+            <section class="grid account-info">
+                <div class="grid-18 grid-mt-20 user-name">
+                    <a href="?" class="show-page-loader">
+                        <img width="45" height="45" src="images/avatar.png" alt="">
+                    </a>
+
+                    <label>
+                        <a href="?" class="show-page-loader" id="user_name" data-testid="user-name">Jan Demobankowy</a>
+                    </label>
+                </div>
+
+                <div class="grid-30 user-messages">
+                    <label id="user_messages">
+                        <a href="?" class="show-page-loader">
+                            <i class="i-message"></i>
+                            <span class="highlight" id="show_messages" data-testid="message-text" style="width:150px;word-wrap:break-word;">Brak wiadomości</span>
+                        </a>
+
+                    </label>
+                </div>
+
+                <div class="grid-8 user-session">
+                    <label>do zakończenia sesji:</label>
+
+                    <i class="i-clock"></i>
+
+                    <strong id="session_time" data-time="0:0:10:0"></strong>
+
+                    <a href="#" class="raquo" id="show_session">&raquo;</a>
+                </div>
+            </section>
+
+            <div class="grid main-container">
+                <nav class="nav-main">
+                    <ul>
+                        <li>
+                            <div class="category active">
+                                <a href="?" class="show-page-loader">
+                                    <i class="i-nav-dashboard" id="pulpit_btn"></i>mój pulpit</a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="quick_payment.html" class="show-page-loader">
+                                        <i class="i-subnav-transfers"  id="quick_btn"></i>szybki przelew
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="phone.html" class="show-page-loader">
+                                        <i class="i-phone"  id="phone_btn"></i>doładowanie telefonu
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="category">
+                                <a href="konta.html" class="show-page-loader">
+                                    <i class="i-nav-accounts" id="privaccounts_btn"></i>konta osobiste</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="category">
+                                <a href="przelew_nowy_zew.html" class="show-page-loader">
+                                    <i class="i-nav-payments"  id="payments_btn"></i>płatności</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="category">
+                                <a href="reports.html" class="show-page-loader">
+                                    <i class="i-subnav-history"  id="reports_btn"></i>raporty</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="category">
+                                <a href="reports-iframe.html" class="show-page-loader">
+                                    <i class="i-subnav-history"  id="reports_iframe_btn"></i>raporty (iframe)</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="category">
+                                <a href="charts.html" class="show-page-loader">
+                                    <i class="i-subnav-history"  id="charts_btn"></i>wykresy</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="category">
+                                <a href="tables.html" class="show-page-loader">
+                                    <i class="i-subnav-history"  id="tables_btn"></i>tabele danych</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="category">
+                                <a href="pulpit_empty.html" class="show-page-loader">
+                                    <i class="i-nav-settings"  id="settings_btn"></i>ustawienia
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="main-content dashboard">
+                    <div class="ms-show mobile-nav-second">
+                        <div class="grid" id="mobile_nav_wrapper">
+                            <div class="mobile-nav-wrapper">
+                                <ul>
+                                    <li class="nav-item active">
+                                        <a href="pulpit.html">
+                                            <i class="i-mobinav-dashboard"></i>
+                                            mój pulpit
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="quick_payment.html">
+                                           <i class="i-mobinav-transfers"></i>
+                                            szybki przelew
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="konta.html">
+                                            <i class="i-mobinav-accounts"></i>
+                                            konta osobiste
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="main_content">
+                        <section class="grid dashboard-section">
+                            <div class="dashboard-actions">
+
+
+                            </div>
+
+                            <h1 class="wborder">
+                                <i class="i-nav-accounts ms-show"></i>
+                                konta osobiste
+                            </h1>
+
+                            <div class="dashboard-list" id="accounts_list">
+                                <article class="account-item">
+                                    <div class="row account-details box-white table-alike">
+                                        <div class="table-header">
+                                            <span class="account-name table-grid-23">
+                                                <strong>Konto na życie</strong>
+
+                                                <br class="ms-hide">
+
+                                                <span class="ms-hide account-number" id="account_number">(41 4100 1111 1111 1111 1111 0000)</span>
+                                            </span>
+
+                                            <div class="table-grid-16 table-grid-mt-12 table-grid-ms-25">
+                                                <div class="table-header">
+                                                    <span class="account-available table-grid-21 mt-hide ms-hide">dostępne
+                                                        środki</span>
+
+                                                    <span class="account-amount table-grid-26 table-grid-mt-48 table-grid-ms-48">
+                                                        <span class="account-available mt-show ms-show">dostępne środki</span>
+
+                                                        <span class="fancy-amount">
+                                                            <span class="value-wrapper" id="money_value">13159</span>
+
+                                                            <span class="decimal-wrapper">,<span id="decimal_value">20</span></span>
+
+                                                            <span class="currency-wrapper">PLN</span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                                <span class="table-grid-9 table-grid-mt-13 ms-hide">
+                                                    <a  class="btn red arrow right show-page-loader">więcej</a>
+                                                </span>
+
+                                        </div>
+
+                                        <div class="row table-details hide">
+                                            <div class="account-details-list grid">
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-16 grid-mt-space-2 grid-ms-48">blokady
+                                                        na koncie</label>
+
+                                                    <div class="form-static grid-22 grid-mt-16 grid-ms-48">
+                                                        <span class="fancy-amount">
+                                                            <span class="value-wrapper">300</span>
+
+                                                            <span class="decimal-wrapper">,00</span>
+
+                                                            <span class="currency-wrapper">PLN</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-16 grid-mt-space-2 grid-ms-48">limit
+                                                        kredytowy do wykorzystania</label>
+
+                                                    <div class="form-static grid-22 grid-mt-28 grid-ms-48">
+                                                        <span class="fancy-amount">
+                                                            <span class="value-wrapper">10 000</span>
+
+                                                            <span class="decimal-wrapper">,00</span>
+
+                                                            <span class="currency-wrapper">PLN</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-16 grid-mt-space-2 grid-ms-48">posiadacz</label>
+
+                                                    <div class="form-static grid-22 grid-mt-28 grid-ms-48" id="owner">Jan Demobankowy</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="grid accounts-widgets">
+                                        <div class="grid-24">
+                                            <div class="box-white widget">
+                                                <h2 class="wborder">szybki przelew</h2>
+
+                                                <i class="i-hint tooltip widget-info">
+                                                    <span class="info hide">
+                                                        widżet umożliwia zlecenie przelewu zwykłego do jednego ze
+                                                        zdefiniowanych odbiorców
+                                                    </span>
+                                                </i>
+
+                                                <form id="widget_transfer_1" class="formmanager" action="?" method="post">
+                                                    <div class="form-row">
+                                                        <label class="grid-8 form-label grid-mt-48">do</label>
+
+                                                        <div class="grid-space-2 grid-28 grid-mt-48 grid-mt-space-0 field">
+                                                            <select data-classes="selector-mt-small selector-ms-small transfer_receiver" onchange="changeValues();"
+                                                                id="widget_1_transfer_receiver">
+                                                                <option value="">wybierz odbiorcę przelewu</option>
+                                                                <option value="1" data-amount="5,00" data-title="zasilenie">Jan Demobankowy</option>
+                                                                <option value="2" data-amount="10,00" data-title="test">Chuck Demobankowy</option>
+                                                                <option value="3" data-amount="7500,00" data-title="Paper please">Michael Scott</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <label class="grid-8 form-label grid-mt-48">kwota</label>
+
+                                                        <div class="grid-space-2 grid-24 grid-mt-42 grid-mt-space-0 field">
+                                                            <input type="text" class="number" id="widget_1_transfer_amount"></input>
+                                                        </div>
+
+                                                        <div class="grid-space-1 grid-5 form-static">PLN</div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <label class="grid-8 form-label grid-mt-48">tytułem</label>
+
+                                                        <div class="grid-space-2 grid-28 grid-mt-48 grid-mt-space-0 field">
+                                                            <input type="text" class="title" id="widget_1_transfer_title" ></input>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="grid-space-10 grid-14 grid-mt-space-0 grid-mt-24">
+                                                            <!-- <button class="btn red arrow" id="execute_btn" onclick="invokeQuickTransfer(document.getElementById('widget_1_transfer_amount').value, document.getElementById('widget_1_transfer_title').value)">wykonaj</button> -->
+                                                            <button type="submit" class="btn red arrow" id="execute_btn" onclick="invokeQuickTransfer()">wykonaj</button>
+
+                                                        </div>
+                                                        <!-- <a href='' onclick="this.href='?msg=Przelew wykonany - kwota: '+document.getElementById('widget_1_transfer_amount').value + ' tytuł: '+document.getElementById('widget_1_transfer_title').value" class="btn red arrow"> -->
+                                                        <!-- <a href="?msg=Przelew wykonany" class="btn gray show-page-loader" onclick="invokeQuickTransfer()"> -->
+                                                            <!-- wykonaj
+                                                        </a> -->
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid-24">
+                                            <div class="box-white widget widget-table widget-recent-operations"
+                                                data-action="konto/34263/historia/ostatnie">
+                                                <h2 class="wborder">ostatnie operacje</h2>
+
+                                                <table class="table-transfers" style="width: 100%; white-space: nowrap; table-layout: fixed;">
+                                                    <tbody>
+                                                        <tr >
+                                                            <td class="mt-hide" style="width: 20%">07.11.22</td>
+
+                                                            <td class="mt-hide">
+                                                                <i class="i-transaction-transfer"></i>
+                                                            </td>
+
+                                                            <td>
+                                                                <span class="short last-operation-desc" id="payment_info">
+                                                                    PayU S.A.,
+                                                                    Płatność
+                                                                    onlineID:123456 PayU w Allegro
+                                                                </span>
+
+                                                                <time class="mt-show" datetime="07.11.2022">7.11.22</time>
+                                                            </td>
+
+                                                            <td class="text-right">
+                                                                <span class="fancy-amount amount-minus">
+                                                                    <span class="value-wrapper">-341</span>
+
+                                                                    <span class="rest-wrapper">
+                                                                        <span class="decimal-wrapper">,70</span>
+
+                                                                        <span class="currency-wrapper">PLN</span>
+                                                                    </span>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr >
+                                                            <td class="mt-hide" style="width: 20%">05.11.22</td>
+
+                                                            <td class="mt-hide">
+                                                                <i class="i-transaction-intrest"></i>
+                                                            </td>
+
+                                                            <td>
+                                                                <span class="short last-operation-desc">
+                                                                    Odsetki -
+                                                                    Kapitalizacja
+                                                                    odsetek
+                                                                </span>
+
+                                                                <time class="mt-show" datetime="05.11.2022">05.11.22</time>
+                                                            </td>
+
+                                                            <td class="text-right">
+                                                                <span class="fancy-amount">
+                                                                    <span class="value-wrapper">12</span>
+
+                                                                    <span class="rest-wrapper">
+                                                                        <span class="decimal-wrapper">,33</span>
+
+                                                                        <span class="currency-wrapper">PLN</span>
+                                                                    </span>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr >
+                                                            <td class="mt-hide" style="width: 20%">05.10.22</td>
+
+                                                            <td class="mt-hide">
+                                                                <i class="i-history-card-other"></i>
+                                                            </td>
+
+                                                            <td>
+                                                                <span class="short last-operation-desc">
+                                                                    Katowice, Zakup towarow i uslug karta
+                                                                </span>
+
+                                                                <time class="mt-show" datetime="05.10.2022">05.10.22</time>
+                                                            </td>
+
+                                                            <td class="text-right">
+                                                                <span class="fancy-amount amount-minus">
+                                                                    <span class="value-wrapper">-187</span>
+
+                                                                    <span class="rest-wrapper">
+                                                                        <span class="decimal-wrapper">,68</span>
+
+                                                                        <span class="currency-wrapper">PLN</span>
+                                                                    </span>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    <tr >
+                                                    <td class="mt-hide" style="width: 20%">02.10.22</td>
+                                                            <td class="mt-hide">
+                                                                <i class="i-history-card-other"></i>
+                                                            </td>
+
+                                                            <td>
+                                                                <span class="short last-operation-desc">
+                                                                    Warszawa, Zakup towarow i uslug karta
+                                                                </span>
+
+                                                                <time class="mt-show" datetime="02.10.2022">02.10.22</time>
+                                                            </td>
+
+                                                            <td class="text-right">
+                                                                <span class="fancy-amount amount-minus">
+                                                                    <span class="value-wrapper">-537</span>
+
+                                                                    <span class="rest-wrapper">
+                                                                        <span class="decimal-wrapper">,21</span>
+
+                                                                        <span class="currency-wrapper">PLN</span>
+                                                                    </span>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    <td class="mt-hide" style="width: 20%">01.10.22</td>
+                                                            <td class="mt-hide">
+                                                                <i class="i-history-income"></i>
+                                                            </td>
+
+                                                            <td>
+                                                                <span class="short last-operation-desc">
+                                                                    Warszawa, Wypłata
+                                                                </span>
+
+                                                                <time class="mt-show" datetime="01.10.2022">01.10.22</time>
+                                                            </td>
+
+                                                            <td class="text-right">
+                                                                <span class="fancy-amount">
+                                                                    <span class="value-wrapper">7586</span>
+
+                                                                    <span class="rest-wrapper">
+                                                                        <span class="decimal-wrapper">,68</span>
+
+                                                                        <span class="currency-wrapper">PLN</span>
+                                                                    </span>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="grid-24">
+                                            <div class="box-white widget">
+                                                <h2 class="wborder">doładowanie telefonu</h2>
+
+                                                <form id="widget_topup_1" class="formmanager" action="?" method="post">
+                                                    <div class="form-row">
+                                                        <label class="grid-8 form-label grid-mt-48">do</label>
+
+                                                        <div class="grid-space-2 grid-28 grid-mt-48 grid-mt-space-0 field">
+                                                            <select data-classes="selector-mt-small selector-ms-small topup_receiver"
+                                                                id="widget_1_topup_receiver">
+                                                                <option value="">
+                                                                    wybierz telefon do doładowania
+                                                                </option>
+
+                                                                <option value="500 xxx xxx" data-operator="1"
+                                                                    data-amount="100">500 xxx xxx</option>
+
+                                                                    <option value="502 xxx xxx" data-operator="2"
+                                                                    data-amount="25">502 xxx xxx</option>
+                                                                    <option value="503 xxx xxx" data-operator="3"
+                                                                        data-amount="25">503 xxx xxx</option>
+                                                                <option value="504 xxx xxx" data-operator="4"
+                                                                    data-amount="25">504 xxx xxx</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <label class="grid-8 form-label grid-mt-48">kwota</label>
+
+                                                        <div class="grid-space-2 grid-24 grid-mt-38 grid-mt-space-0 field">
+                                                            <input type="text" class="number" id="widget_1_topup_amount"></input>
+                                                        </div>
+
+                                                        <div class="grid-space-1 grid-5 form-static">PLN</div>
+
+                                                        <div class="grid-space-1 grid-3 form-static">
+                                                            <i class="i-hint tooltip" style="display: none;">
+                                                                <span class="info hide">
+                                                                    Informacje o doładowaniu:
+
+                                                                    <br>
+                                                                    Minimalna kwota
+                                                                    doładowania
+                                                                    to:
+
+                                                                    <span class="min"></span>
+                                                                    zł
+
+                                                                    <br>
+                                                                    Maksymalna
+                                                                    kwota doładowania to:
+
+                                                                    <span class="max"></span>
+                                                                    zł
+                                                                </span>
+                                                            </i>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <label class="grid-48 grid-mt-48 field checkbox-inline">
+                                                            <input type="checkbox" id="widget_1_topup_agreement"></input> zapoznałem się z regulaminem i akceptuję warunki
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="grid-space-10 grid-20 grid-mt-space-0 grid-mt-28">
+                                                            <button type="submit" class="btn red arrow" id="execute_phone_btn" onclick="invokeQuickPhoneTransfer()">doładuj telefon</button>
+    
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid-24">
+                                            <form class="box-white widget" action="ajax_pulpit_manager_finansowy_success.json">
+                                                <h2 class="wborder">manager finansowy</h2>
+
+                                                <div class="form-row">
+                                                    <label class="grid-16 form-label form-label-multiline grid-mt-48">
+                                                        wpływy i wydatki za okres
+                                                    </label>
+
+                                                    <div class="grid-space-2 grid-28 grid-mt-48 grid-mt-space-0 field">
+                                                        <select data-classes="selector-mt-small selector-ms-small widget-financial-manager-select">
+                                                            <option value="1">bieżący miesiąc</option>
+
+                                                            <option value="1">poprzedni miesiąc</option>
+
+                                                            <option value="3" selected="">ostatnie 3 miesiące</option>
+
+                                                            <option value="6">ostatnie 6 miesięcy</option>
+
+                                                            <option value="12">bieżący rok</option>
+
+                                                            <option value="12">poprzedni rok</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="grid-48 widget-financial-manager" id="widget_financial_manager_1"></div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+
+                        <div id="aggregation_list" class="products-list">
+                            <section class="grid dashboard-section">
+                                <div class="dashboard-actions">
+                                </div>
+
+                                <h1 class="wborder">
+                                    <i class="i-nav-accounts ms-show"></i>
+                                    rachunki oszczędnościowe
+                                </h1>
+
+                                <div class="dashboard-list">
+                                    <article class="account-item">
+                                        <div class="row
+                                                account-header box-white table-alike">
+                                            <div class="table-header">
+                                                <span class="account-name table-grid-23">
+                                                    <strong>TEStos</strong>
+
+                                                    <span class="ms-hide account-number">
+                                                        (22 xxxx xxxx xxxx xxxx 0000 0000)
+                                                    </span>
+                                                </span>
+
+                                                <div class="table-grid-16 table-grid-mt-12 table-grid-ms-25">
+                                                    <div class="table-header">
+                                                        <span class="account-available table-grid-21 mt-hide ms-hide">dostępne
+                                                            środki</span>
+
+                                                        <span class="account-amount table-grid-26 table-grid-mt-48 table-grid-ms-48">
+                                                            <span class="account-available mt-show ms-show">dostępne
+                                                                środki</span>
+
+                                                            <span class="fancy-amount">
+                                                                <span class="value-wrapper">5 010</span>
+
+                                                                <span class="decimal-wrapper">,00</span>
+
+                                                                <span class="currency-wrapper">PLN</span>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <span class="table-grid-9 table-grid-mt-13 ms-hide">
+                                                    <a  class="btn red arrow right show-page-loader">więcej</a>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row account-details hide">
+                                            <div class="account-details-list grid">
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">typ
+                                                        rachunku</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">Progress</div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">oprocentowanie</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">2,5%</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </article>
+                                </div>
+                            </section>
+
+                            <section class="grid dashboard-section">
+
+                                <h1 class="wborder">
+                                    <i class="i-nav-savings ms-show"></i>
+                                    lokaty
+                                </h1>
+
+                                <div class="dashboard-list">
+                                    <article class="account-item">
+                                        <div class="row
+                                                account-header box-white table-alike">
+                                            <div class="table-header">
+                                                <span class="account-name table-grid-23">
+                                                    <strong>lokata terminowa,</strong>
+
+                                                    data zakończenia 01.01.2028
+                                                </span>
+                                                <div class="table-grid-16 table-grid-mt-12 table-grid-ms-25">
+                                                    <div class="table-header">
+                                                        <span class="account-available table-grid-21 mt-hide ms-hide">kwota
+                                                            lokaty</span>
+                                                        <span class="account-amount table-grid-26 table-grid-mt-48 table-grid-ms-48">
+                                                            <span class="account-available mt-show ms-show">kwota
+                                                                lokaty</span>
+                                                            <span class="fancy-amount">
+                                                                <span class="value-wrapper">31 020</span>
+                                                                <span class="decimal-wrapper">,20</span>
+                                                                <span class="currency-wrapper">PLN</span>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <span class="table-grid-9 table-grid-mt-13 ms-hide">
+                                                    <a  class="btn red arrow right show-page-loader">więcej</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row account-details hide">
+                                            <div class="account-details-list grid">
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">typ
+                                                        lokaty</label>
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">dynamiczna</div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">okres
+                                                        lokaty</label>
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">3 miesiące</div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">oprocentowanie</label>
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">3,95%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </section>
+                            <section class="grid dashboard-section">
+                                <div class="dashboard-actions">
+                                </div>
+                                <h1 class="wborder">
+                                    <i class="i-nav-cards ms-show"></i>karty debetowe
+                                </h1>
+                                <div class="dashboard-list">
+                                    <article class="account-item">
+                                        <div class="row account-header box-white table-alike">
+                                            <div class="table-header">
+                                                <span class="account-name table-grid-18 table-grid-mt-15 table-grid-ms-28">
+                                                    <strong>VISA Electron</strong>
+                                                </span>
+                                                <span class="table-grid-21 table-grid-mt-20 table-grid-ms-20 ms-text-right">Jan
+                                                    Demobankowy</span>
+                                                <span class="table-grid-9 table-grid-mt-13 ms-hide">
+                                                    <a  class="btn red arrow right show-page-loader">więcej</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row account-details hide">
+                                            <div class="account-details-list grid">
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">numer
+                                                        karty</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">0000 xxxx
+                                                        xxxx 1111</div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">status
+                                                        karty</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">aktywna</div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">do
+                                                        konta</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">
+                                                        [KO] konto na życie [11 211,31 PLN] 0011...0022
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </section>
+
+                            <section class="grid dashboard-section">
+                                <div class="dashboard-actions">
+                                </div>
+
+                                <h1 class="wborder">
+                                    <i class="i-nav-cards ms-show"></i>
+                                    karty kredytowe
+                                </h1>
+
+                                <div class="dashboard-list">
+                                    <article class="account-item">
+                                        <div class="row
+                                                account-header box-white table-alike">
+                                            <div class="table-header">
+                                                <span class="account-name table-grid-18 table-grid-mt-15 table-grid-ms-28">
+                                                    <strong>Visa Gold Standard</strong>
+                                                </span>
+                                                <span class="table-grid-7 table-grid-mt-10 ms-hide">Jan Demobankowy</span>
+                                                <div class="table-grid-14 table-grid-mt-10 table-grid-ms-20 mt-hide ms-hide hide"
+                                                    id="saldoKK">
+                                                    <div class="table-header">
+                                                        <span class="account-available table-grid-21 mt-hide ms-hide">dostępne
+                                                            środki</span>
+
+                                                        <span class="account-amount table-grid-26 table-grid-mt-48 table-grid-ms-48">
+                                                            <span class="account-available mt-show ms-show">dostępne
+                                                                środki</span>
+                                                            <span class="fancy-amount">
+                                                                <span class="value-wrapper">3 370</span>
+                                                                <span class="decimal-wrapper">,00</span>
+                                                                <span class="currency-wrapper">PLN</span>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <span class="table-grid-9 table-grid-mt-13 ms-hide">
+                                                    <a  class="btn red arrow right show-page-loader">więcej</a>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row account-details hide">
+                                            <div class="account-details-list grid">
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">numer
+                                                        karty</label>
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">0000 00xx
+                                                        xxxx 0000</div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">status
+                                                        karty</label>
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">aktywna</div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">do
+                                                        spłaty natychmiast</label>
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">
+                                                        <span class="fancy-amount">
+                                                            <span class="value-wrapper">125</span>
+
+                                                            <span class="decimal-wrapper">,00</span>
+
+                                                            <span class="currency-wrapper">PLN</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">minimalna
+                                                        kwota spłaty</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">
+                                                        <span class="fancy-amount">
+                                                            <span class="value-wrapper">25</span>
+
+                                                            <span class="decimal-wrapper">,00</span>
+
+                                                            <span class="currency-wrapper">PLN</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">w
+                                                        tym zaległość</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">
+                                                        <span class="fancy-amount">
+                                                            <span class="value-wrapper">50</span>
+
+                                                            <span class="decimal-wrapper">,00</span>
+
+                                                            <span class="currency-wrapper">PLN</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">termin płatności</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">05.11.2023</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </article>
+                                </div>
+                            </section>
+
+                            <section class="grid dashboard-section">
+                                <div class="dashboard-actions">
+                                </div>
+
+                                <h1 class="wborder">
+                                    <i class="i-nav-loans ms-show"></i>
+                                    kredyty
+                                </h1>
+
+                                <div class="dashboard-list">
+                                    <article class="account-item">
+                                        <div class="row
+                                                account-header box-white table-alike">
+                                            <div class="table-header">
+                                                <span class="account-name table-grid-23">
+                                                    <strong>kredyt ratalny</strong>
+                                                </span>
+
+                                                <div class="table-grid-16 table-grid-mt-12 table-grid-ms-25">
+                                                    <div class="table-header">
+                                                        <span class="account-available table-grid-21 mt-hide ms-hide">pozostało
+                                                            do spłaty</span>
+
+                                                        <span class="account-amount table-grid-26 table-grid-mt-48 table-grid-ms-48">
+                                                            <span class="account-available mt-show ms-show">pozostało
+                                                                do spłaty</span>
+
+                                                            <span class="fancy-amount">
+                                                                <span class="value-wrapper">13 070</span>
+
+                                                                <span class="decimal-wrapper">,83</span>
+
+                                                                <span class="currency-wrapper">PLN</span>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <span class="table-grid-9 table-grid-mt-13 ms-hide">
+                                                    <a  class="btn red arrow right show-page-loader">więcej</a>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row account-details hide">
+                                            <div class="account-details-list grid">
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">data
+                                                        najbliższej raty</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">28.04.2014</div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">kwota
+                                                        najbliższej raty</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">
+                                                        <span class="fancy-amount">
+                                                            <span class="value-wrapper">350</span>
+
+                                                            <span class="decimal-wrapper">,00</span>
+
+                                                            <span class="currency-wrapper">PLN</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">
+                                                        rachunek do spłaty
+
+                                                        <i class="i-hint tooltip">
+                                                            <span class="info hide">
+                                                                na ten rachunek wpłacaj kwoty rat zgodnie z
+                                                                harmonogramem
+                                                            </span>
+                                                        </i>
+                                                    </label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">
+                                                        [KO] konto na życie [13 159,20 PLN] 4141...0000
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </article>
+
+                                    <article class="account-item">
+                                        <div class="row
+                                                account-header box-white table-alike">
+                                            <div class="table-header">
+                                                <span class="account-name table-grid-23">
+                                                    <strong>limit w koncie</strong>
+                                                </span>
+
+                                                <div class="table-grid-16 table-grid-mt-12 table-grid-ms-25">
+                                                    <div class="table-header">
+                                                        <span class="account-available table-grid-21 mt-hide ms-hide">bieżące
+                                                            zadłużenie</span>
+
+                                                        <span class="account-amount table-grid-26 table-grid-mt-48 table-grid-ms-48">
+                                                            <span class="account-available mt-show ms-show">bieżące
+                                                                zadłużenie</span>
+
+                                                            <span class="fancy-amount">
+                                                                <span class="value-wrapper">0</span>
+
+                                                                <span class="decimal-wrapper">,00</span>
+
+                                                                <span class="currency-wrapper">PLN</span>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <span class="table-grid-9 table-grid-mt-13 ms-hide">
+                                                    <a  class="btn red arrow right show-page-loader">więcej</a>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row account-details hide">
+                                            <div class="account-details-list grid">
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">minimalna
+                                                        miesięczna wpłata</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">
+                                                        <span class="fancy-amount">
+                                                            <span class="value-wrapper">30</span>
+
+                                                            <span class="decimal-wrapper">,00</span>
+
+                                                            <span class="currency-wrapper">PLN</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">
+                                                        rachunek do spłaty
+
+                                                        <i class="i-hint tooltip">
+                                                            <span class="info hide">
+                                                                na ten rachunek wpłacaj kwotę minimalnej miesięcznej
+                                                                wpłaty
+                                                            </span>
+                                                        </i>
+                                                    </label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">
+                                                        [KO] konto na życie [13 159,20 PLN] 4141...0000
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">kwota
+                                                        przyznanego limitu</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">
+                                                        <span class="fancy-amount">
+                                                            <span class="value-wrapper">10 000</span>
+
+                                                            <span class="decimal-wrapper">,00</span>
+
+                                                            <span class="currency-wrapper">PLN</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </section>
+
+                            <section class="grid dashboard-section">
+                                <div class="dashboard-actions">
+                                </div>
+
+                                <h1 class="wborder">
+                                    <i class="i-nav-insurances ms-show"></i>
+                                    ubezpieczenia
+                                </h1>
+
+                                <div class="dashboard-list">
+                                    <article class="account-item">
+                                        <div class="row
+                                                account-header box-white table-alike">
+                                            <div class="table-header">
+                                                <span class="account-name table-grid-32 table-grid-mt-24 table-grid-ms-22">
+                                                    <strong>Assistance</strong>
+                                                </span>
+
+                                                <div class="table-grid-16 table-grid-mt-24 table-grid-ms-26">
+                                                    <span class="insurance-date grid-32 grid-ms-48">data końca
+                                                        ubezpieczenia:</span>
+
+                                                    <span class="insurance-date grid-16 grid-ms-48">bezterminowo</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row account-details hide">
+                                            <div class="account-details-list grid">
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">opis
+                                                        ubezpieczenia</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">ubezpieczenie
+                                                        mieszkania</div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">tow.
+                                                        ubezpieczneiowe</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">Towarzystwo
+                                                        Ubezpieczeniowe ABC S.A.
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">ubezpieczony</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">Jan
+                                                        Demobankowy</div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="form-label-multiline grid-11 grid-space-6 grid-mt-18 grid-mt-space-0 grid-ms-48">konto
+                                                        powiązane</label>
+
+                                                    <div class="form-static grid-22 grid-mt-30 grid-ms-48">41 4170 0000
+                                                        1111 5001 0000 0000</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </article>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer_placeholder"></footer>
+
+    <div id="messages_list" class="popup popup-messages">
+        <ul>
+            <li>
+                <a href="?msg=Nowa Wiadomość - Odrzucona operacja" class="show-page-loader">
+                    <div class="grid-4">
+                        <i class="i-payment-card"></i>
+                    </div>
+
+                    <div class="grid-28">Odrzucona operacja</div>
+
+                    <div class="grid-16 message-time">14.07.2014 15:00</div>
+                </a>
+            </li>
+
+            <li>
+                <a href="?msg=Nowa Wiadomość" class="show-page-loader">
+                    <div class="grid-4">
+                        <i class="i-payment-card"></i>
+                    </div>
+
+                    <div class="grid-28">Wiadomość</div>
+
+                    <div class="grid-16
+                                                message-time">29.03.2014 15:00</div>
+                </a>
+            </li>
+
+            <li>
+                <a href="?msg=Nowa Wiadomość - Nowa oferta dla Ciebie" class="show-page-loader">
+                    <div class="grid-4">
+                        <i class="i-payment-card"></i>
+                    </div>
+
+                    <div class="grid-28">Nowa oferta dla Ciebie</div>
+
+                    <div class="grid-16 message-time">29.03.2014 15:00</div>
+                </a>
+            </li>
+        </ul>
+
+        <a href="?" class="btn gray medium arrow show-page-loader">przejdź do skrzynki odbiorczej</a>
+    </div>
+
+    <div id="last_session" class="popup popup-last-session">ostatnie udane logowanie:
+
+        <span>22.11.2022 09:12</span>
+
+        <br>
+        ostatnie nieudane logowanie:
+
+        <span>08.11.2022 22:12</span>
+    </div>
+
+    <!-- scripts here -->
+    <script src="js/vendor/libs.js"></script>
+    <script src="js/app/app_modules.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/vendor/charts.js"></script>
+    <script src="js/wspolne.js"></script>
+    <!-- end scripts -->
+
+    <script>
+        $(function () {
+            $.cookie('eb_dashboard_manager_infobox', 'false', {
+                expires: 365,
+                path: '/'
+            });
+        });
+
+        $('.widget-financial-manager').each(
+            function () {
+                $(this).columnChart();
+            }
+        );
+
+        //<!-- validators -->
+        window.operators = {
+            'operator_1': {
+                label: 'Simplus',
+                type: 'range',
+                min: 5,
+                max: 150
+            },
+            'operator_3': {
+                label: 'T-mobile',
+                type: 'range',
+                min: 5,
+                max: 500
+            },
+            'operator_4': {
+                label: 'Orange',
+                type: 'list',
+                values: ['5', '10', '25', '40', '50', '100', '200']
+            },
+            'operator_5': {
+                label: 'Heyah',
+                type: 'range',
+                min: 5,
+                max: 500
+            },
+            'operator_6': {
+                label: 'Sami Swoi',
+                type: 'list',
+                values: ['10', '20', '40', '80', '100', '160']
+            },
+            'operator_2': {
+                label: 'MixPlus',
+                type: 'range',
+                min: 5,
+                max: 150
+            },
+            'operator_7': {
+                label: 'Play',
+                type: 'range',
+                min: 5,
+                max: 300
+            },
+            'operator_8': {
+                label: '36i6',
+                type: 'range',
+                min: 5,
+                max: 150
+            },
+            'operator_9': {
+                label: 'GaduAIR',
+                type: 'list',
+                values: ['10', '20', '50', '100']
+            },
+            'operator_10': {
+                label: 'Polsat Cyfrowy',
+                type: 'range',
+                min: 5,
+                max: 500
+            },
+            'operator_12': {
+                label: 'Virgin Mobile',
+                type: 'list',
+                values: ['5', '10', '30', '50', '100', '150']
+            }
+        };
+
+        window.oValidator.setFields([{
+                id: 'widget_1_transfer_receiver',
+                validators: [{
+                    'type': 'required'
+                }],
+                messages: ['pole wymagane'],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_1_transfer_amount',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'amount'
+                    },
+                    {
+                        'type': 'maxvalue',
+                        'value': 1000000
+                    }
+                ],
+                messages: [
+                    'pole wymagane',
+                    'podana kwota jest niepoprawna',
+                    'kwota musi być mniejsza od 1000000'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_1_transfer_title',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'maxlength',
+                        'value': 120
+                    },
+                ],
+                messages: [
+                    'pole wymagane',
+                    'tytuł może mieć maksymalnie 120 znaków'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_1_topup_receiver',
+                validators: [{
+                    'type': 'required'
+                }],
+                messages: [
+                    'pole wymagane'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_1_topup_amount',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'amount'
+                    },
+                    {
+                        'type': 'minvalue',
+                        'value': 10
+                    },
+                    {
+                        'type': 'maxvalue',
+                        'value': 50
+                    }
+                ],
+                messages: [
+                    'pole wymagane',
+                    'podana kwota jest niepoprawna',
+                    'kwota musi być większa od 10',
+                    'kwota musi być mniejsza od 50'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_1_topup_agreement',
+                validators: [{
+                    'type': 'checkbox'
+                }],
+                messages: [
+                    'pole wymagane'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_2_transfer_receiver',
+                validators: [{
+                    'type': 'required'
+                }],
+                messages: [
+                    'pole wymagane'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_2_transfer_amount',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'amount'
+                    },
+                    {
+                        'type': 'maxvalue',
+                        'value': 1000000
+                    }
+                ],
+                messages: [
+                    'pole wymagane',
+                    'podana kwota jest niepoprawna',
+                    'kwota musi być mniejsza od 1000000'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_2_transfer_title',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'maxlength',
+                        'value': 120
+                    },
+                ],
+                messages: [
+                    'pole wymagane',
+                    'tytuł może mieć maksymalnie 120 znaków'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_2_topup_receiver',
+                validators: [{
+                    'type': 'required'
+                }],
+                messages: [
+                    'pole wymagane'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_2_topup_amount',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'amount'
+                    },
+                    {
+                        'type': 'minvalue',
+                        'value': 10
+                    },
+                    {
+                        'type': 'maxvalue',
+                        'value': 50
+                    }
+                ],
+                messages: [
+                    'pole wymagane',
+                    'podana kwota jest niepoprawna',
+                    'kwota musi być większa od 10',
+                    'kwota musi być mniejsza od 50'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_2_topup_agreement',
+                validators: [{
+                    'type': 'checkbox'
+                }],
+                messages: [
+                    'pole wymagane'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_3_transfer_receiver',
+                validators: [{
+                    'type': 'required'
+                }],
+                messages: [
+                    'pole wymagane'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_3_transfer_amount',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'amount'
+                    },
+                    {
+                        'type': 'maxvalue',
+                        'value': 1000000
+                    }
+                ],
+                messages: [
+                    'pole wymagane',
+                    'podana kwota jest niepoprawna',
+                    'kwota musi być mniejsza od 1000000'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_3_transfer_title',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'maxlength',
+                        'value': 120
+                    },
+                ],
+                messages: [
+                    'pole wymagane',
+                    'tytuł może mieć maksymalnie 120 znaków'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_4_transfer_receiver',
+                validators: [{
+                    'type': 'required'
+                }],
+                messages: [
+                    'pole wymagane'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_4_transfer_amount',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'amount'
+                    },
+                    {
+                        'type': 'maxvalue',
+                        'value': 1000000
+                    }
+                ],
+                messages: [
+                    'pole wymagane',
+                    'podana kwota jest niepoprawna',
+                    'kwota musi być mniejsza od 1000000'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'widget_4_transfer_title',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'maxlength',
+                        'value': 120
+                    },
+                ],
+                messages: [
+                    'pole wymagane',
+                    'tytuł może mieć maksymalnie 120 znaków'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            }
+        ]);
+        //<!-- end validators-->
+        $("#widget_transfer_1").on("submit",function(event){
+            event.preventDefault()
+        })
+        $("#widget_topup_1").on("submit",function(event){
+            event.preventDefault()
+        })
+        $(document).ready(function () {
+            setTimeout(function () {
+                $('#kreciolek').hide();
+                $('#saldoKK').removeClass('ms-hide mt-hide hide');
+            }, 3000)
+        });
+        $( window ).on('beforeunload', function( event ) {
+            // console.log('Handler for `beforeunload` called.');
+        });
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        function getParam(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(decodeURIComponent(window.location.href));
+            if (results == null)
+                return "Brak wiadomości";
+            else
+                return results[1];
+        }
+        function invokeQuickTransfer() {
+            window.manager.require('app:modules:forms:submitForm:run')
+            var transfer_receiver = document.getElementById("widget_1_transfer_receiver").value
+            var transfer_amount = document.getElementById("widget_1_transfer_amount").value
+            var transfer_title = document.getElementById("widget_1_transfer_title").value
+
+            if (transfer_title.length > 0 && transfer_amount.length > 0 && transfer_receiver.length > 0) {
+                var e = document.getElementById("widget_1_transfer_receiver");
+                var receiver = e.options[e.selectedIndex].text;
+                document.getElementById("show_messages").textContent = `Przelew wykonany! ${receiver} - ${transfer_amount}PLN - ${transfer_title}`;
+                window.manager.require('app:modules:ui:showDialog:run', 'this', 'info', 'Przelew wykonany', `Przelew wykonany!</br></br>Odbiorca: ${receiver}</br>Kwota: ${transfer_amount}PLN </br>Nazwa: ${transfer_title}`);
+                document.getElementById("widget_1_transfer_amount").value = ''
+                document.getElementById("widget_1_transfer_title").value = ''
+
+                var amount_before_raw = document.getElementById("money_value").innerText
+                var decimal_before_raw = document.getElementById("decimal_value").innerText
+
+                amount_before_raw = amount_before_raw.replaceAll(' ', '').replaceAll(' ', '').replaceAll(',', '')
+                const value = (parseInt(amount_before_raw) * 100) + parseInt(decimal_before_raw)
+
+                var transfer_amount_money = transfer_amount.split(',')[0]
+                var transfer_amount_decimal = transfer_amount.split(',')[1]
+                transfer_amount_decimal = transfer_amount_decimal !== undefined ? transfer_amount_decimal : 0
+
+                var result = value - (parseInt(transfer_amount_money) * 100 + parseInt(transfer_amount_decimal))
+                var result_str = `${result}`
+
+                var money_left = result_str.substr(0, result_str.length - 2)
+                var money_decimal_left = result_str.slice(-2)
+
+                document.getElementById("money_value").innerText = parseInt(money_left)
+                document.getElementById("decimal_value").innerText = money_decimal_left.length === 2 ? money_decimal_left : `${money_decimal_left}0`
+                window.manager.require('app:modules:forms:submitForm:clearErrors')
+            }
+        }
+        function invokeQuickPhoneTransfer() {
+            window.manager.require('app:modules:forms:submitForm:run')
+            var transfer_receiver = document.getElementById("widget_1_topup_receiver").value
+            var transfer_amount = document.getElementById("widget_1_topup_amount").value
+            var agreement = document.getElementById("widget_1_topup_agreement").checked
+
+            if (transfer_amount.length > 0 && transfer_receiver.length > 0 && agreement) {
+                var e = document.getElementById("widget_1_topup_receiver");
+                var receiver = e.options[e.selectedIndex].text;
+                document.getElementById("show_messages").textContent = `Doładowanie wykonane! ${transfer_amount}PLN na numer ${receiver}`;
+
+                window.manager.require('app:modules:ui:showDialog:run', 'info', 'info', 'Doładowanie wykonane', `Doładowanie wykonane!</br>Kwota: ${transfer_amount}PLN </br>Numer: ${receiver}`);
+
+                document.getElementById("widget_1_topup_amount").value = ''
+
+                var amount_before_raw = document.getElementById("money_value").innerText
+                var decimal_before_raw = document.getElementById("decimal_value").innerText
+
+
+                amount_before_raw = amount_before_raw.replaceAll(' ', '').replaceAll(' ', '').replaceAll(',', '')
+                const value = (parseInt(amount_before_raw) * 100) + parseInt(decimal_before_raw)
+
+<!--                console.log('value', value)-->
+                var transfer_amount_money = transfer_amount.split(',')[0]
+                var transfer_amount_decimal = transfer_amount.split(',')[1]
+                transfer_amount_decimal = transfer_amount_decimal !== undefined ? transfer_amount_decimal : 0
+
+<!--                console.log('transfer_amount_money, transfer_amount_decimal', transfer_amount_money, transfer_amount_decimal)-->
+                var result = value - (parseInt(transfer_amount_money) * 100 + parseInt(transfer_amount_decimal))
+                var result_str = `${result}`
+
+<!--                console.log('result_str', result_str)-->
+                var money_left = result_str.substr(0, result_str.length - 2)
+                var money_decimal_left = result_str.slice(-2)
+
+                document.getElementById("money_value").innerText = parseInt(money_left)
+                document.getElementById("decimal_value").innerText = money_decimal_left.length === 2 ? money_decimal_left : `${money_decimal_left}0`
+                window.manager.require('app:modules:forms:submitForm:clearErrors')
+            }
+        }
+        function getUrlData() {
+            // var comment = getParameterByName("comment");
+            // document.getElementsByName("my-label")[0].value = comment;
+            // document.getElementsByName("my-label")[0].value = getParam( 'comment' );
+            document.getElementById("show_messages").textContent = getParam('msg');
+        }
+
+        function changeValues() {
+
+        }
+    </script>
+</body>
+</head>
+
+</html>

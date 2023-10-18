@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demobank - Bankowość Internetowa - Logowanie</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta charset="utf-8" />
+    <script src="js/vendor/heads.js"></script>
+    <link rel="shortcut icon" href="images\logo-fav.png" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="Robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+<body onload="clearData()">
+    <header class="header">
+        <div class="grid-wrapper">
+            <h1><a href="index.html" class="logo login">Demobank w sam raz do testów</a></h1>
+        </div>
+    </header>
+    <div class="bg-image bg-image-login"></div>
+    <section class="container">
+        <div class="grid-wrapper">
+            <div class="grid main-container main-container-login">
+                <div class="main-content main-content-ms">
+                    <div class="grid login-container">
+
+                        <form autocomplete="off"  class="grid-28 grid-mt-40 grid-ms-48 login-form"
+                            id="login_form" >
+                            <h1 class="wborder" style="color:green;font-weight:bold;" id="header_2">Wersja demonstracyjna serwisu Demobank</h1>
+                            <div class="fieldset">
+                                <div class="form-row" id="login_id_container">
+                                    <label class="grid-12 grid-ms-43 form-label">identyfikator</label>
+                                    <div class="grid-20 grid-ms-48 grid-space-1 field">
+                                        <input type="text" css="login-input" name="login" id="login_id" data-testid="login-input" class="login-input"
+                                            maxlength="8" autocomplete="off" tabindex="1"><br>
+                                    </div>
+                                    <div class="login-kb ms-hide" data-id="login_id">
+                                        <i class="i-keyboard" id="kb_login_id"></i>
+                                    </div>
+                                    <div class="login-tooltip-wrapper">
+                                        <div class="login-tooltip">
+                                            <i class="i-hint-white tooltip widget-info">
+                                                <span class="info hide">
+                                                    Wprowadź identyfikator otrzymany z banku lub alias - dodatkowy
+                                                    własny identyfikator, samodzielnie zdefiniowany w Demobank online.
+                                                </span>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row" id="login_password_container">
+                                    <label class="grid-12 grid-ms-43 form-label">hasło</label>
+                                    <div class="grid-20 grid-ms-48 grid-space-1 field">
+                                        <input type="password" name="haslo" data-testid="password-input" id="login_password"
+                                            maxlength="8" class="login-input" autocomplete="off" >
+                                    </div>
+                                    <div class="login-kb ms-hide" data-id="login_password">
+                                        <i class="i-keyboard"></i>
+                                    </div>
+                                    <div class="login-tooltip-wrapper">
+                                        <div class="login-tooltip" data-id="login_password">
+                                            <i class="i-hint-white tooltip widget-info">
+                                                <span class="info hide">
+                                                    Wprowadź swoje hasło. Sprawdź, czy przycisk Caps Lock jest
+                                                    włączony. Uwaga: 3-krotne wprowadzenie błędnego hasła spowoduje
+                                                    zablokowanie dostępu do systemu.
+                                                </span>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row hide" id="login_token_container">
+                                    <label class="grid-12 grid-ms-43 form-label">token</label>
+                                    <div class="grid-20 grid-ms-48 grid-space-1 field ignore-error">
+                                        <input type="text" name="" id="login_token" maxlength="9" class="login-input ignore"
+                                            autocomplete="off" />
+                                    </div>
+                                    <div class="login-kb ms-hide" data-id="login_token">
+                                        <i class="i-keyboard"></i>
+                                    </div>
+                                    <div class="login-tooltip-wrapper">
+                                        <div class="login-tooltip">
+                                            <i class="i-hint-white tooltip widget-info">
+                                                <span class="info hide">
+                                                    Wpisz aktualne wskazanie tokena.
+                                                </span>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row form-actions">
+                                    <button type="submit" id="login-btn" data-testid="login-button" class="btn red arrow grid-space-13 grid-ms-space-0" disabled>zaloguj się</button>
+                                </div>
+                            </div>
+                        </form>
+                        <section class="grid-28 grid-space-0 grid-mt-40 grid-mt-space-0 grid-ms-48 box-white box-white-transparent login-info">
+                            <h1 class="login-highlight">
+                                Uwaga!
+                            </h1>
+                            <p>
+                                Tutaj prezentujemy wersję demonstracyjną serwisu Demobank online. <br> Aby się
+                                zalogować podaj dowolne 8 znaków identyfikatora oraz dowolne 8 znaków hasła. Nie
+                                podawaj rzeczywistych danych!
+                            </p>
+                        </section>
+                        <section class="grid login-help">
+                            <div class="grid-35 grid-space-3 grid-mt-48 padding-mt-10-0  ms-hide login-help-section">
+                                <h2 class="wborder">Bezpieczeństwo</h2>
+                                <div class="grid-22 grid-space-0">
+                                    <h3 class="login-help-head">Podstawowe zasady</h3>
+                                    <ul class="list-red">
+                                        <li>
+                                            loguj się wyłacznie przez zaufaną stronę
+                                        </li>
+                                        <li>
+                                            regularnie aktualizuj system operacyjny i oprogramowanie antywirusowe
+                                        </li>
+                                        <li>
+                                            sprawdzaj czy połączenie jest szyfrowane (kłódka na pasku adresu
+                                            przeglądarki)
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="grid-22 grid-space-4">
+                                    <h3 class="login-help-head">Pamiętaj</h3>
+                                    <ul class="list-red">
+                                        <li>
+                                            podczas logowania bank nigdy nie prosi o podanie wskazania tokena więcej
+                                            niż raz
+                                        </li>
+                                        <li>
+                                            bank nigdy nie wysyła e-maili z prośbą o zalogowanie na wskazany link i
+                                            podanie swoich danych w celach weryfikacji
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer_placeholder">
+    </footer>
+
+    <!-- scripts here -->
+    <script src="js/vendor/libs.js"></script>
+    <script src="js/vendor/libs_login.js"></script>
+    <script src="js/app/app_modules.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/wspolne.js"></script>
+    <!-- end scripts -->
+    <script>
+        // Get references to the login and password input fields
+        const loginInput = document.getElementById("login_id");
+        const passwordInput = document.getElementById("login_password");
+
+        // Get a reference to the login button
+        const loginButton = document.getElementById("login-btn");
+
+        // Add event listeners to the input fields to check if they have at least 8 characters
+        loginInput.addEventListener("input", checkInputs);
+        passwordInput.addEventListener("input", checkInputs);
+        loginButton.addEventListener("click", login);
+
+        function checkInputs() {
+          // Check if both input fields have at least 8 characters
+          if (loginInput.value.length >= 8 && passwordInput.value.length >= 8) {
+            // If so, enable the login button
+            loginButton.disabled = false;
+          } else {
+            // If not, disable the login button
+            loginButton.disabled = true;
+          }
+        }
+
+        function login() {
+            setCookie("isLogged", 'true', 1);
+            window.location.href = 'pulpit.html';
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            let expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        $('#ident_pass').on('click', function (e) {
+            e.preventDefault();
+            window.manager.require('app:modules:modal:window:show');
+        });
+
+        $('#ident_rem').on('click', function (e) {
+            e.preventDefault();
+            window.manager.require('app:modules:modal:window:show');
+        });
+
+        $(document).ready(function () {
+            var param, query = window.location.search.substring(1);
+            var pos = query.indexOf('=');
+            if (pos > 0) {
+                param = query.substring(pos + 1);
+                $('#login_id').val(param);
+            }
+        });
+
+        $(function () {
+            if (jQuery.support.leadingWhitespace) {
+                $('input[type="password"]').parents('form').submit(function () {
+                    if ($('input[type="password"]').parents('form').data('status') === "step_1" || $(
+                            'input[type="password"]').parents('form').data('status') === "step_1_token") {
+                        // $(this).find('input[type="password"]').hide().prop('type', 'private');
+                    }
+                });
+            }
+        });
+
+        window.oValidator.setFields([{
+                id: 'login_id',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'minlength',
+                        'value': '8'
+                    }
+                ],
+                messages: [
+                    'pole wymagane',
+                    'identyfikator ma min. 8 znaków'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'login_password',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'minlength',
+                        'value': 8
+                    },
+                ],
+                messages: [
+                    'pole wymagane',
+                    'hasło ma min. 8 znaków'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            },
+            {
+                id: 'login_token',
+                validators: [{
+                        'type': 'required'
+                    },
+                    {
+                        'type': 'token'
+                    }
+                ],
+                messages: [
+                    'pole wymagane',
+                    'wpisz poprawny token'
+                ],
+                is_dirty: false,
+                is_error: false,
+                error_message: ''
+            }
+        ]);
+
+        function clearData() {
+            clearCookies()
+        }
+
+        function clearCookies() {
+            document.cookie = "isLogged=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+    </script>
+</body>
+
+</html>
