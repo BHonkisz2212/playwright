@@ -1,16 +1,17 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("User login to Demobank", () => {
-  const userId = "testerLO";
-  const userPassword = "12345678";
-  const userIncorrectId = "555";
-  test.beforeEach(async ({ page }) => {
 
+ 
+
+  test.beforeEach(async ({ page }) => {
+    
     await page.goto('/');
   });
   test("login with correct credentials", async ({ page }) => {
     //Arrange
-
+    const userPassword = "12345678";
+    const userId = "testerLO";
     const expectedUserName = "Jan Demobankowy";
 
     //Act
@@ -26,6 +27,8 @@ test.describe("User login to Demobank", () => {
   test("unsuccesfull login with too short username", async ({ page }) => {
     //Arrange
     const errorLoginId = "error-login-id";
+    const userPassword = "12345678";
+    const userIncorrectId = "555";
 
     //Act
     await page.getByTestId("login-input").fill(userIncorrectId);
@@ -40,6 +43,7 @@ test.describe("User login to Demobank", () => {
 
   test("unsccesfull login with too short password", async ({ page }) => {
     //Arrange
+    const userId = "testerLO";
     const errorLoginPassword = "error-login-password";
     const userIncorrectPassword = "123";
 
