@@ -72,6 +72,6 @@ test.describe('Pulpit tests', () => {
     await pulpitPage.actionCloseButton.click();
 
     // Assert
-    await expect(page.locator('#money_value')).toHaveText(`${expectedBalance}`);
+    await expect(pulpitPage.moneyValue).toHaveText(`${expectedBalance}`);
   });
 });

@@ -1,13 +1,14 @@
 import { test, expect } from '@playwright/test';
 import { loginData } from '../test-data/login.data';
 import { LoginPage } from '../pages/login.page';
+import { PulpitPage } from '../pages/pulpit.page';
 
 test.describe('User login to Demobank', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
   });
 
-  test('successful login with correct credentials', async ({ page }) => {
+  test.only('successful login with correct credentials', async ({ page }) => {
     // Arrange
     const userId = loginData.userId;
     const userPassword = loginData.userPassword;
@@ -19,8 +20,11 @@ test.describe('User login to Demobank', () => {
     await loginPage.passwordInput.fill(userPassword);
     await loginPage.loginButton.click();
 
+  
+
     // Assert
-    await expect(page.getByTestId('user-name')).toHaveText(expectedUserName);
+    const pulpitPage = new PulpitPage(page);
+    await expect(pulpitPage.userNameText).toHaveText(expectedUserName);
   });
 
   test('unsuccessful login with too short username', async ({ page }) => {

@@ -18,4 +18,8 @@ export class PulpitPage {
 
   messageText = this.page.locator('#show_messages');
 
+  moneyValue = this.page.locator('#money_value');
+
+ userNameText = this.page.locator('#user-name');
+
 }
