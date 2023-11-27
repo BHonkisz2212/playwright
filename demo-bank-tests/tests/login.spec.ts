@@ -24,7 +24,7 @@ test.describe('User login to Demobank', () => {
 
     // Assert
     const pulpitPage = new PulpitPage(page);
-    await expect(pulpitPage.userNameText).toHaveText(expectedUserName);
+    await expect(pulpitPage.userNameText).toHaveText(expectedUserName,{timeout:5000});
   });
 
   test('unsuccessful login with too short username', async ({ page }) => {
