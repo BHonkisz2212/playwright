@@ -5,25 +5,22 @@ import { PaymentPage } from '../pages/payment.page';
 import { PulpitPage } from '../pages/pulpit.page';
 
 test.describe('Payment tests', () => {
+  let paymentPage: PaymentPage;//tu inicjalizujemy, let bo musi dać się nadpisać
   test.beforeEach(async ({ page }) => {
     const userId = loginData.userId;
     const userPassword = loginData.userPassword;
     const loginPage = new LoginPage(page);
-
+    paymentPage = new PaymentPage(page);//inicjalizacja, a w testach wykorzystanie
     await page.goto('/');
-    await loginPage.loginInput.fill(userId);
-    await loginPage.passwordInput.fill(userPassword);
-    await loginPage.loginButton.click();
-
+    await loginPage.login(userId,userPassword)
     const pulpitPage = new PulpitPage(page)
     await pulpitPage.sideMenu.paymentButton.click()//2 stopniowe odwołanie
-
 
   });
 
   test('simple payment', async ({ page }) => {
     // Arrange
-    const paymentPage = new PaymentPage(page);
+   
     const transferReceiver = 'Jan Nowak';
     const transferAccount = '12 3456 7890 1234 5678 9012 34568';
     const transferAmount = '222';

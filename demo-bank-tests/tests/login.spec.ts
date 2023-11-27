@@ -4,26 +4,23 @@ import { LoginPage } from '../pages/login.page';
 import { PulpitPage } from '../pages/pulpit.page';
 
 test.describe('User login to Demobank', () => {
+  let loginPage: LoginPage;//deklarujemy zmieną globlanie, podajemy typ, bo to ts
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
+    loginPage = new LoginPage(page);//w be też musi być zadeklarowana, żeby była dostępna
   });
 
-  test.only('successful login with correct credentials', async ({ page }) => {
+  test('successful login with correct credentials', async ({ page }) => {
     // Arrange
     const userId = loginData.userId;
     const userPassword = loginData.userPassword;
     const expectedUserName = 'Jan Demobankowy';
 
     // Act
-    const loginPage = new LoginPage(page);
-    await loginPage.loginInput.fill(userId);
-    await loginPage.passwordInput.fill(userPassword);
-    await loginPage.loginButton.click();
-
-  
-
+    await loginPage.login(userId, userPassword);
+    
     // Assert
-    const pulpitPage = new PulpitPage(page);
+    const pulpitPage = new PulpitPage(page);//jednej nie ma sensu przenosić do descirbe
     await expect(pulpitPage.userNameText).toHaveText(expectedUserName,{timeout:5000});
   });
 
@@ -34,7 +31,6 @@ test.describe('User login to Demobank', () => {
 
     // Act
 
-    const loginPage = new LoginPage(page)
     await loginPage.loginInput.fill(incorrectUserId);
     await loginPage.passwordInput.click();
 
@@ -46,7 +42,6 @@ test.describe('User login to Demobank', () => {
 
   test('unsuccessful login with too short password', async ({ page }) => {
     // Arrange
-    const loginPage = new LoginPage(page)
 
     const userId = loginData.userId;
     const incorrectPassword = '1234';
