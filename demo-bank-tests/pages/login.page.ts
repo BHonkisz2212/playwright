@@ -7,7 +7,7 @@ export class LoginPage {
   passwordInput = this.page.getByTestId('password-input');
   loginButton = this.page.getByTestId('login-button');
   loginError = this.page.getByTestId('error-login-id');
-  passwordError = this. page.getByTestId('error-login-password');
+  passwordError = this.page.getByTestId('error-login-password');
 
   async login(userId:string, userPassword: string):Promise<void>{//metoda - nic nie będzie zwracała, obietnica zwracanego wyniku musi być
 
